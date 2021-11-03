@@ -1,4 +1,5 @@
 const names = [];
+
 export default function getInfo(req, res) {
   names.push(req.body.name);
   /*   res.json({
@@ -6,5 +7,6 @@ export default function getInfo(req, res) {
     name: req.body.name,
     count: count++,
   }); */
+
   res.send('Info ' + names);
 }
