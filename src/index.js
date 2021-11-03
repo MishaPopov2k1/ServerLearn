@@ -4,9 +4,12 @@ import logger from './modules/core/logger';
 import parseResponse from './modules/core/parseResponse';
 import cors from './modules/core/cors';
 import routes from './modules/core/routes';
+import dbConnect from './modules/core/db';
 export const app = express();
-const PORT = 5100;
+const PORT = 5000;
 
+//Подключаем БД
+dbConnect();
 //Создаем прослойку для запроса, для удобного отслеживания
 logger(app);
 //Парсим боди из запроса
@@ -16,7 +19,7 @@ cors(app);
 //Роуты, развилка
 routes(app);
 
-//Вынесли логику в роутсы
+//Вынесли ЭТУ логику в роутсы
 // app.get('/', home);
 // app.post('/info', getInfo);
 
