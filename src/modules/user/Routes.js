@@ -3,6 +3,6 @@ import userRegister from './userRegister';
 
 const router = Router();
 
-router.post('/', userRegister);
+router.post('/', userRegister); // методом 'POST' обращаемся сюда -> localhost:5000/user/ -> выполняем userRegister
 
 export default router;
